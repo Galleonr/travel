@@ -1,23 +1,29 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>五一广东旅行攻略 2026 · 两套方案</title><style>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>五一广东旅行攻略 2026 · 两套方案</title>
+<style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#333;background:#f8f9fa;line-height:1.7}
-.selector{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.08)}
+.selector{position:sticky;top:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 .sel-inner{max-width:900px;margin:0 auto;padding:14px 20px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
 .sel-label{font-size:13px;color:#666;flex-shrink:0}
 .btn{padding:7px 18px;border-radius:20px;border:2px solid #ddd;background:#fff;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.2s;color:#333}
 .btn:hover{border-color:#aaa}
 .btn.on-red{border-color:#e74c3c;background:#e74c3c;color:#fff}
 .btn.on-blue{border-color:#0077b6;background:#0077b6;color:#fff}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 20px 60px;position:relative;overflow:hidden;transition:all 0.4s}
-.hero::before{content:'';position:absolute;inset:0;opacity:0.2;background-size:cover;background-position:center}
-.hero h1{font-size:clamp(22px,5vw,44px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px}
-.hero .sub{font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:20px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 20px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.2}
+.hero>div{position:relative;z-index:1}
+.hero h1{font-size:clamp(22px,5vw,44px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero .sub{font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:20px;text-shadow:0 1px 5px rgba(0,0,0,0.3)}
 .hero .tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.hero .tag{background:rgba(255,255,255,0.2);padding:5px 13px;border-radius:20px;font-size:12px;color:#fff}
+.hero .tag{background:rgba(255,255,255,0.2);padding:5px 13px;border-radius:20px;font-size:12px;color:#fff;backdrop-filter:blur(4px)}
 .hero .stats{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:36px}
 .hero .stat{text-align:center}
-.hero .stat .n{font-size:24px;font-weight:800;color:#fff}
+.hero .stat .n{font-size:24px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.25)}
 .hero .stat .l{font-size:11px;color:rgba(255,255,255,0.8)}
 section{padding:60px 20px;max-width:900px;margin:0 auto}
 section h2{font-size:22px;font-weight:700;margin-bottom:5px;color:#222}
@@ -39,6 +45,7 @@ section p{color:#666;font-size:13px;margin-bottom:24px}
 .dtext ul{list-style:none;margin-top:4px}
 .dtext li{padding-left:10px;position:relative}
 .dtext li::before{content:'•';position:absolute;left:0}
+.addr{font-size:11px;color:#999;margin-top:2px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px}
 .bcard{background:#fff;border-radius:14px;padding:16px;text-align:center;box-shadow:0 3px 15px rgba(0,0,0,0.06)}
 .bcard .emo{font-size:24px;margin-bottom:5px}
@@ -50,6 +57,7 @@ section p{color:#666;font-size:13px;margin-bottom:24px}
 .fcard .fb{padding:10px}
 .fcard .fn{font-size:13px;font-weight:700;margin-bottom:3px;color:#222}
 .fcard .fd{font-size:11px;color:#666}
+.fcard .fa{font-size:10px;color:#999;margin-top:2px;display:block}
 .fcard .fc{display:inline-block;background:#f0f0f0;padding:2px 8px;border-radius:10px;font-size:11px;margin-top:5px}
 .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .tip{background:#fff;border-radius:14px;padding:16px;box-shadow:0 3px 15px rgba(0,0,0,0.06);display:flex;gap:10px;align-items:flex-start}
@@ -62,6 +70,7 @@ section p{color:#666;font-size:13px;margin-bottom:24px}
 .scard .sb{padding:10px}
 .scard .sn{font-size:13px;font-weight:700;margin-bottom:3px;color:#222}
 .scard .sd{font-size:11px;color:#666}
+.scard .sa{font-size:10px;color:#999;margin-top:2px;display:block}
 .scard .sc{display:inline-block;background:#f0f9ff;padding:2px 8px;border-radius:10px;font-size:11px;color:#0077b6;margin-top:5px}
 .mapsec{background:#fff;border-radius:14px;padding:18px;text-align:center;box-shadow:0 3px 15px rgba(0,0,0,0.06);margin-bottom:20px}
 .mapsec a{display:inline-block;margin-top:10px;padding:7px 16px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;color:#fff}
@@ -73,14 +82,17 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 #plan-a{background:#f8f9fa}
 #plan-b{background:#f0f9ff}
 @media(max-width:600px){.sel-inner{flex-direction:column;gap:7px}.hero .stats{gap:16px}}
-</style><script>function show(p){var a=document.getElementById('plan-a'),b=document.getElementById('plan-b'),ba=document.getElementById('b-a'),bb=document.getElementById('b-b');if(p=='a'){a.classList.add('on');b.classList.remove('on');ba.classList.add('on-red');ba.classList.remove('on-blue');bb.classList.remove('on-blue');bb.classList.remove('on-red')}else{a.classList.remove('on');b.classList.add('on');bb.classList.add('on-blue');bb.classList.add('on-red');ba.classList.remove('on-red');ba.classList.remove('on-blue')}}</script></head>
+</style>
+<script>
+function show(p){var a=document.getElementById('plan-a'),b=document.getElementById('plan-b'),ba=document.getElementById('b-a'),bb=document.getElementById('b-b');if(p=='a'){a.classList.add('on');b.classList.remove('on');ba.classList.add('on-red');ba.classList.remove('on-blue');bb.classList.remove('on-blue');bb.classList.remove('on-red');}else{a.classList.remove('on');b.classList.add('on');bb.classList.add('on-blue');bb.classList.remove('on-red');ba.classList.remove('on-red');ba.classList.remove('on-blue');}window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</head>
 <body>
-
 <div class="selector">
 <div class="sel-inner">
 <span class="sel-label">选择方案：</span>
-<button class="btn on-red" id="b-a" onclick="show('a')">&#127968; 方案A · 广东逛吃线</button>
-<button class="btn" id="b-b" onclick="show('b')">&#127754; 方案B · 粤西海边线</button>
+<button class="btn on-red" id="b-a" onclick="show('a')">🏘 方案A · 广东逛吃线</button>
+<button class="btn" id="b-b" onclick="show('b')">🌊 方案B · 粤西海边线</button>
 </div>
 </div>
 
@@ -88,11 +100,11 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <div class="plan on" id="plan-a">
 <div class="hero" style="background:linear-gradient(135deg,#c0392b,#e74c3c,#f39c12)">
 <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80') center/cover;opacity:0.2"></div>
-<div style="position:relative;z-index:1">
-<h1>&#127968; 五一广东逛吃之旅</h1>
+<div>
+<h1>🏘 五一广东逛吃之旅</h1>
 <p class="sub">2026年4月29日 - 5月4日 · 6天5晚 · 4人同行</p>
-<div class="tags"><span class="tag">&#129438; 潮汕</span><span class="tag">&#127984; 顺德</span><span class="tag">&#127981; 佛山</span><span class="tag">&#127984; 广州</span></div>
-<div class="stats"><div class="stat"><div class="n">6天</div><div class="l">行程天数</div></div><div class="stat"><div class="n">5晚</div><div class="l">住宿天数</div></div></div><div class="stat"><div class="n">4人</div><div class="l">朋友出行</div></div></div>
+<div class="tags"><span class="tag">🦅 潮汕</span><span class="tag">🏠 顺德</span><span class="tag">🏛 佛山</span><span class="tag">🏠 广州</span></div>
+<div class="stats"><div class="stat"><div class="n">6天</div><div class="l">行程天数</div></div><div class="stat"><div class="n">5晚</div><div class="l">住宿天数</div></div><div class="stat"><div class="n">4人</div><div class="l">朋友出行</div></div></div>
 </div>
 </div>
 
@@ -108,18 +120,9 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <span class="city" style="background:#c0392b">广州</span><span class="arrow">→</span>
 <span class="city" style="background:#c0392b">杭州</span>
 </div>
-
 <div class="mapsec">
-<p style="font-size:13px;color:#666">&#128205; 高铁路线：杭州 → 汕头 → 潮州 → 顺德 → 佛山 → 广州 → 杭州</p>
-<a href="https://www.amap.com/directions?from=%E6%9D%AD%E5%B7%9E&to=%E6%B9%9B%E5%A4%B4" target="_blank" style="background:#e74c3c">在 楂樺痉鍦板浘 查看路线 →</a>
-</div>
-<div class="grid">
-<div class="bcard"><div class="emo">✈️</div><div class="amt" style="color:#e74c3c">&#165;800</div><div class="lbl">往返交通</div></div>
-<div class="bcard"><div class="emo">🏨</div><div class="amt" style="color:#e74c3c">&#165;1500</div><div class="lbl">住宿(5晚)</div></div>
-<div class="bcard"><div class="emo">🍜</div><div class="amt" style="color:#e74c3c">&#165;1500</div><div class="lbl">餐饮（逛吃）</div></div>
-<div class="bcard"><div class="emo">🎫</div><div class="amt" style="color:#e74c3c">&#165;500</div><div class="lbl">门票/体验</div></div>
-<div class="bcard"><div class="emo">🚌</div><div class="amt" style="color:#e74c3c">&#165;400</div><div class="lbl">省内交通</div></div>
-<div class="bcard"><div class="emo">💰</div><div class="amt" style="color:#e74c3c">&#165;300</div><div class="lbl">备用金</div></div>
+<p style="font-size:13px;color:#666">📍 高铁路线：杭州 → 汕头 → 潮州 → 顺德 → 佛山 → 广州 → 杭州</p>
+<a href="https://uri.amap.com/marker?from=&to=116.68,23.35&name=汕头&multi=true" target="_blank" style="background:#e74c3c">在高德地图查看路线 →</a>
 </div>
 </section>
 
@@ -129,44 +132,61 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <div class="days">
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#2c3e50,#c0392b)"><span class="badge">Day 1 · 4.29</span><span class="dtitle">杭州 → 汕头</span></div><div class="dbody">
-<div class="drow"><span class="dicon">✈️</span><div class="dtext"><h4>交通</h4><p>方案A：飞机 杭州→揭阳潮汕机场（&#165;500-800/人）<br>方案B：高铁 杭州东→汕头（&#165;650/人）</p></div></div>
-<div class="drow"><span class="dicon">🏨</span><div class="dtext"><h4>住宿</h4><p>汕头老城区（近小公园历史街区）· &#165;200-300/晚</p></div></div>
-<div class="drow"><span class="dicon">🌙</span><div class="dtext"><h4>晚上 · 汕头牛肉火锅</h4><ul><li>共和路手捶牛肉火锅（必吃！）</li><li>老妈宫粽球 · 潮汕甘草水果</li></ul></div></div>
+<div class="drow"><span class="dicon">✈️</span><div class="dtext"><h4>交通</h4><p>飞机 杭州→揭阳潮汕机场（¥500-800/人）</p></div></div>
+<div class="drow"><span class="dicon">🏨</span><div class="dtext"><h4>住宿</h4><p>汕头老城区（近小公园历史街区）· ¥200-300/晚</p></div></div>
+<div class="drow"><span class="dicon">🌙</span><div class="dtext"><h4>晚上 · 汕头牛肉火锅</h4>
+<ul>
+<li>八合里海记牛肉火锅 · 汕头市金平区黄岗路坪东5座01号</li>
+<li>老妈宫粽球 · 潮汕甘草水果</li>
+</ul></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#2c3e50,#c0392b)"><span class="badge">Day 2 · 4.30</span><span class="dtitle">汕头深度游</span></div><div class="dbody">
-<div class="drow"><span class="dicon">🌅</span><div class="dtext"><h4>早上 · 老字号早茶</h4><p>春梅里鹅肉附近 · &#165;50/人</p></div></div>
-<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>上午 · 小公园历史街区</h4><p>骑楼建筑群（免费）· 拍照超出片</p></div></div>
-<div class="drow"><span class="dicon">🥩</span><div class="dtext"><h4>中午 · 潮汕牛肉火锅</h4><p>八合里/海记/福合埕（任选）<br>必点：手打牛肉丸，五花趾、胸口朥 · &#165;100/人</p></div></div>
-<div class="drow"><span class="dicon">🏯</span><div class="dtext"><h4>下午 · 陈慈黉故居</h4><p>岭南第一侨宅，&#165;40/人</p></div></div>
-<div class="drow"><span class="dicon">🌙</span><div class="dtext"><h4>晚上 · 潮汕夜宵</h4><ul><li>潮汕毒药（生腌蟹/生腌虾）</li><li>肠粉 · 糖葱薄饼</li></ul></div></div>
+<div class="drow"><span class="dicon">🌅</span><div class="dtext"><h4>早上 · 老字号早茶 + 卤鹅</h4><p>春梅里鹅肉 · 汕头市金平区黄岗路3号（中山路店）· ¥50/人</p></div></div>
+<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>上午 · 小公园历史街区</h4><p>骑楼建筑群（免费）· 拍照超出片</p><p class="addr">地址：汕头市金平区小公园片区</p></div></div>
+<div class="drow"><span class="dicon">🥩</span><div class="dtext"><h4>中午 · 潮汕牛肉火锅</h4><p>八合里/海记/福合埕（任选）<br>必点：手打牛肉丸，五花趾、胸口朥 · ¥100/人</p></div></div>
+<div class="drow"><span class="dicon">🏯</span><div class="dtext"><h4>下午 · 陈慈黉故居</h4><p>岭南第一侨宅 · ¥50/人（现场购票）</p><p class="addr">地址：汕头市澄海区隆都镇前美村 · 开放时间 8:30-17:30</p></div></div>
+<div class="drow"><span class="dicon">🌙</span><div class="dtext"><h4>晚上 · 潮汕夜宵</h4>
+<ul>
+<li>潮汕毒药（生腌蟹/生腌虾）</li>
+<li>肠粉 · 糖葱薄饼</li>
+</ul></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#2c3e50,#c0392b)"><span class="badge">Day 3 · 5.1</span><span class="dtitle">汕头 → 潮州</span></div><div class="dbody">
 <div class="drow"><span class="dicon">🚌</span><div class="dtext"><h4>交通</h4><p>汕头→潮州（约1小时大巴）</p></div></div>
-<div class="drow"><span class="dicon">🏯</span><div class="dtext"><h4>上午/下午 · 潮州古城</h4><ul><li>牌坊街（免费，夜景超美）</li><li>开元寺（千年古刹，免费）</li><li>甲第巷（民居文化，免费）</li></ul></div></div>
+<div class="drow"><span class="dicon">🏯</span><div class="dtext"><h4>上午/下午 · 潮州古城</h4>
+<ul>
+<li>牌坊街（免费，夜景超美）· 地址：潮州市湘桥区牌坊街</li>
+<li>开元寺（千年古刹，免费）· 地址：潮州市湘桥区开元路32号 · 开放时间 8:00-18:00</li>
+<li>甲第巷（民居文化，免费）</li>
+</ul></div></div>
 <div class="drow"><span class="dicon">🌙</span><div class="dtext"><h4>晚上 · 潮州夜景 + 小食</h4><p>牌坊街夜景 · 潮州粿条、咸水粿</p></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#2c3e50,#c0392b)"><span class="badge">Day 4 · 5.2</span><span class="dtitle">顺德逛吃一天</span></div><div class="dbody">
-<div class="drow"><span class="dicon">🥛</span><div class="dtext"><h4>中午 · 顺德金榜牛奶店</h4><p>双皮奶，姜撞奶（必吃！百年老字号）</p></div></div>
-<div class="drow"><span class="dicon">🦆</span><div class="dtext"><h4>下午 · 顺德美食</h4><ul><li>烧鹅（民信老铺/大头华烧鹅）</li><li>顺德鱼生（肥华鱼生）</li><li>炸牛奶（大良毋米粥）</li></ul></div></div>
+<div class="drow"><span class="dicon">🥛</span><div class="dtext"><h4>中午 · 顺德金榜牛奶店</h4><p>双皮奶、姜撞奶（必吃！百年老字号）</p><p class="addr">地址：佛山市顺德区大良街道金榜上街82号</p></div></div>
+<div class="drow"><span class="dicon">🦆</span><div class="dtext"><h4>下午 · 顺德美食</h4>
+<ul>
+<li>烧鹅（民信老铺/大头华烧鹅）· 顺德大良近华盖路</li>
+<li>顺德鱼生（肥华鱼生）· 顺德区大良</li>
+<li>炸牛奶（大良毋米粥）</li>
+</ul></div></div>
 <div class="drow"><span class="dicon">🌙</span><div class="dtext"><h4>晚上 · 华盖路步行街</h4><p>顺德糖水 · 捞起鱼皮</p></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#2c3e50,#c0392b)"><span class="badge">Day 5 · 5.3</span><span class="dtitle">顺德 → 佛山 → 广州</span></div><div class="dbody">
-<div class="drow"><span class="dicon">🏯</span><div class="dtext"><h4>上午 · 佛山祖庙</h4><p>黄飞鸿纪念馆，&#165;30/人</p></div></div>
-<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>下午 · 岭南天地</h4><p>古建筑活化街区，免费，拍照很好看</p></div></div>
-<div class="drow"><span class="dicon">🏨</span><div class="dtext"><h4>住宿</h4><p>广州越秀区/荔湾区（近上下九）· &#165;300/晚</p></div></div>
-<div class="drow"><span class="dicon">🌃</span><div class="dtext"><h4>晚上 · 珠江夜游</h4><p>珠江夜游 &#165;100/人 · 北京路步行街</p></div></div>
+<div class="drow"><span class="dicon">🏯</span><div class="dtext"><h4>上午 · 佛山祖庙</h4><p>黄飞鸿纪念馆 · ¥30/人</p><p class="addr">地址：佛山市禅城区祖庙大街21号</p></div></div>
+<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>下午 · 岭南天地</h4><p>古建筑活化街区，免费，拍照很好看</p><p class="addr">地址：佛山市禅城区祖庙大街2号 · 开放时间 10:00-22:00</p></div></div>
+<div class="drow"><span class="dicon">🏨</span><div class="dtext"><h4>住宿</h4><p>广州越秀区/荔湾区（近上下九）· ¥300/晚</p></div></div>
+<div class="drow"><span class="dicon">🌃</span><div class="dtext"><h4>晚上 · 珠江夜游</h4><p>珠江夜游 ¥100/人 · 北京路步行街</p></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#2c3e50,#c0392b)"><span class="badge">Day 6 · 5.4</span><span class="dtitle">广州 → 杭州</span></div><div class="dbody">
-<div class="drow"><span class="dicon">🍵</span><div class="dtext"><h4>早上 · 最后一顿早茶</h4><p>陶陶居/广州酒家 · 购买皇上皇腊肠等手信</p></div></div>
-<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>上午 · 沙面岛</h4><p>免费，欧式建筑群，拍照超好看</p></div></div>
+<div class="drow"><span class="dicon">🍵</span><div class="dtext"><h4>早上 · 最后一顿早茶</h4><p>陶陶居总店 · 广州市荔湾区第十甫路20号（上下九步行街）</p><p>购买皇上皇腊肠等手信</p></div></div>
+<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>上午 · 沙面岛</h4><p>免费，欧式建筑群，拍照超好看</p><p class="addr">地址：广州市荔湾区沙面岛</p></div></div>
 <div class="drow"><span class="dicon">✈️</span><div class="dtext"><h4>下午 · 返回杭州</h4><p>傍晚前到达杭州，结束旅程 ✨</p></div></div>
 </div></div>
-
 </div>
 </section>
 
@@ -174,12 +194,14 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <h2>美食地图</h2>
 <p>每站都有必吃，跟着吃不会错</p>
 <div class="fgrid">
-<div class="fcard"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=70" alt="潮汕牛肉火锅"><div class="fb"><div class="fn">潮汕牛肉火锅</div><div class="fd">手打牛肉丸，五花趾、胸口朥，按秒涮</div><span class="fc" style="color:#e74c3c">汕头 · 必吃</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=400&q=70" alt="顺德双皮奶"><div class="fb"><div class="fn">顺德双皮奶</div><div class="fd">金榜牛奶店，奶香浓郁，百年老字号</div><span class="fc" style="color:#e74c3c">顺德 · 必吃</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?w=400&q=70" alt="广式早茶"><div class="fb"><div class="fn">广式早茶</div><div class="fd">虾饺、烧麦、凤爪、叉烧包，配一壶茶</div><span class="fc" style="color:#e74c3c">广州 · 必吃</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&q=70" alt="潮汕生腌"><div class="fb"><div class="fn">潮汕生腌（毒药）</div><div class="fd">生腌蟹/生腌虾，配白粥</div><span class="fc" style="color:#e74c3c">汕头 · 夜宵</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=70" alt="顺德鱼生"><div class="fb"><div class="fn">顺德鱼生</div><div class="fd">薄切鲩鱼片，配十几种配料</div><span class="fc" style="color:#e74c3c">顺德 · 必吃</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=400&q=70" alt="潮州小吃"><div class="fb"><div class="fn">潮州牌坊街小吃</div><div class="fd">咸水粿、粿条汤、鸭母捻、糖葱薄饼</div><span class="fc" style="color:#e74c3c">潮州 · 小食</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=70" alt="潮汕牛肉火锅"><div class="fb"><div class="fn">潮汕牛肉火锅</div><div class="fd">手打牛肉丸，五花趾、胸口朥，按秒涮</div><span class="fa">汕头市金平区黄岗路坪东5座01号</span><span class="fc" style="color:#e74c3c">汕头 · 必吃</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=400&q=70" alt="顺德双皮奶"><div class="fb"><div class="fn">顺德双皮奶</div><div class="fd">金榜老字号牛奶，奶香浓郁，百年老字号</div><span class="fa">顺德区大良金榜上街82号</span><span class="fc" style="color:#e74c3c">顺德 · 必吃</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?w=400&q=70" alt="广式早茶"><div class="fb"><div class="fn">广式早茶</div><div class="fd">虾饺、烧麦、凤爪、叉烧包，配一壶茶</div><span class="fa">荔湾区第十甫路20号（上下九）</span><span class="fc" style="color:#e74c3c">广州 · 必吃</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&q=70" alt="潮汕生腌"><div class="fb"><div class="fn">潮汕生腌（毒药）</div><div class="fd">生腌蟹/生腌虾，配白粥</div><span class="fa">汕头老城区夜宵档</span><span class="fc" style="color:#e74c3c">汕头 · 夜宵</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=70" alt="顺德鱼生"><div class="fb"><div class="fn">顺德鱼生</div><div class="fd">薄切鲩鱼片，配十几种配料</div><span class="fa">顺德区大良华盖路附近</span><span class="fc" style="color:#e74c3c">顺德 · 必吃</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=400&q=70" alt="潮州小吃"><div class="fb"><div class="fn">潮州牌坊街小吃</div><div class="fd">咸水粿、粿条汤、鸭母捻、糖葱薄饼</div><span class="fa">潮州市湘桥区牌坊街</span><span class="fc" style="color:#e74c3c">潮州 · 小食</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=70" alt="潮汕卤鹅"><div class="fb"><div class="fn">潮汕卤鹅</div><div class="fd">春梅里鹅肉，澄海狮头鹅，三吊三浸</div><span class="fa">汕头市金平区黄岗路3号</span><span class="fc" style="color:#e74c3c">汕头 · 必吃</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=70" alt="顺德烧鹅"><div class="fb"><div class="fn">顺德烧鹅</div><div class="fd">大头华烧鹅，皮脆肉嫩</div><span class="fa">顺德区大良近华盖路</span><span class="fc" style="color:#e74c3c">顺德 · 必吃</span></div></div>
 </div>
 </section>
 
@@ -190,14 +212,14 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <div class="tip"><div class="emo">🎫</div><div><h4>提前买高铁票</h4><p>4.29出发票已开售，立即下手</p></div></div>
 <div class="tip"><div class="emo">🧳</div><div><h4>轻装出行</h4><p>每天换城市，带小背包比行李箱实用</p></div></div>
 <div class="tip"><div class="emo">🦶</div><div><h4>舒适鞋</h4><p>每天步行量大，穿好走的鞋，不要穿新鞋！</p></div></div>
-<div class="tip"><div class="emo">🍽️</div><div><h4>提前订座</h4><p>热门店（八合里，金榜双皮奶）可提前电话订座</p></div></div>
+<div class="tip"><div class="emo">🍽️</div><div><h4>提前订座</h4><p>热门店（八合里、金榜双皮奶）可提前电话订座</p></div></div>
 <div class="tip"><div class="emo">☂️</div><div><h4>防晒防雨</h4><p>5月初广东阳光足，随身带伞</p></div></div>
 <div class="tip"><div class="emo">📱</div><div><h4>支付</h4><p>全程支付宝/微信畅通，无需带现金</p></div></div>
 </div>
 </section>
 
 <div style="text-align:center;padding:40px 20px;background:#fff;border-top:1px solid #eee">
-<p style="font-size:13px;color:#999">&#128279; 逛吃之旅 · 小七出品 · 2026.04.02</p>
+<p style="font-size:13px;color:#999">© 逛吃之旅 · 小七出品 · 2026.04.03</p>
 </div>
 </div>
 
@@ -205,11 +227,11 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <div class="plan" id="plan-b">
 <div class="hero" style="background:linear-gradient(135deg,#0077b6,#00b4d8,#90e0ef)">
 <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80') center/cover;opacity:0.2"></div>
-<div style="position:relative;z-index:1">
-<h1>&#127754; 五一粤西海边度假</h1>
+<div>
+<h1>🌊 五一粤西海边度假</h1>
 <p class="sub">2026年4月29日 - 5月4日 · 6天5晚 · 4人同行</p>
 <div class="tags"><span class="tag">🏖️ 茂名</span><span class="tag">🚢 放鸡岛</span><span class="tag">🦞 湛江</span></div>
-<div class="stats"><div class="stat"><div class="n">6天</div><div class="l">行程天数</div></div><div class="stat"><div class="n">5晚</div><div class="l">海边住宿</div></div></div><div class="stat"><div class="n">4人</div><div class="l">朋友出行</div></div></div>
+<div class="stats"><div class="stat"><div class="n">6天</div><div class="l">行程天数</div></div><div class="stat"><div class="n">5晚</div><div class="l">海边住宿</div></div><div class="stat"><div class="n">4人</div><div class="l">朋友出行</div></div></div>
 </div>
 </div>
 
@@ -223,18 +245,10 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <span class="city" style="background:#0077b6">湛江</span><span class="arrow">→</span>
 <span class="city" style="background:#0077b6">杭州</span>
 </div>
-<div class="note blue">&#128205; 粤西海边度假线：放鸡岛潜水 · 湛江烧蚝 · 朋友慢节奏放松</div>
+<div class="note blue">📍 粤西海边度假线：放鸡岛潜水 · 湛江烧蚝 · 朋友慢节奏放松</div>
 <div class="mapsec">
-<p style="font-size:13px;color:#666">&#128205; 路线：杭州 → 茂名 → 放鸡岛 → 湛江 → 杭州</p>
-<a href="https://www.amap.com/directions?from=%E6%9D%AD%E5%B7%9E&to=%E8%8C%82%E5%90%8D" target="_blank" style="background:#0077b6">在 楂樺痉鍦板浘 查看路线 →</a>
-</div>
-<div class="grid">
-<div class="bcard"><div class="emo">✈️</div><div class="amt" style="color:#0077b6">&#165;800</div><div class="lbl">往返交通</div></div>
-<div class="bcard"><div class="emo">🏨</div><div class="amt" style="color:#0077b6">&#165;1500</div><div class="lbl">住宿(5晚)</div></div>
-<div class="bcard"><div class="emo">🦞</div><div class="amt" style="color:#0077b6">&#165;1500</div><div class="lbl">餐饮(海鲜)</div></div>
-<div class="bcard"><div class="emo">🎫</div><div class="amt" style="color:#0077b6">&#165;500</div><div class="lbl">门票/体验</div></div>
-<div class="bcard"><div class="emo">🚌</div><div class="amt" style="color:#0077b6">&#165;300</div><div class="lbl">省内交通</div></div>
-<div class="bcard"><div class="emo">💰</div><div class="amt" style="color:#0077b6">&#165;400</div><div class="lbl">备用金</div></div>
+<p style="font-size:13px;color:#666">📍 路线：杭州 → 茂名 → 放鸡岛 → 湛江 → 杭州</p>
+<a href="https://uri.amap.com/marker?from=&to=110.93,21.27&name=茂名&multi=true" target="_blank" style="background:#0077b6">在高德地图查看路线 →</a>
 </div>
 </section>
 
@@ -244,29 +258,39 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <div class="days">
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#023e8a,#0077b6)"><span class="badge">Day 1 · 4.29</span><span class="dtitle">杭州 → 茂名</span></div><div class="dbody">
-<div class="drow"><span class="dicon">✈️</span><div class="dtext"><h4>交通</h4><p>方案A：飞机 杭州→湛江/茂名（&#165;600-900/人）<br>方案B：高铁 杭州→茂名（&#165;700/人）</p></div></div>
+<div class="drow"><span class="dicon">✈️</span><div class="dtext"><h4>交通</h4><p>飞机 杭州→湛江/茂名（约2.5小时，¥600-900/人）</p></div></div>
 <div class="drow"><span class="dicon">🏨</span><div class="dtext"><h4>住宿</h4><p>茂名中国第一滩/浪漫海岸附近海景民宿</p></div></div>
-<div class="drow"><span class="dicon">🦞</span><div class="dtext"><h4>晚上 · 博贺港海鲜</h4><p>直接从渔船上买海鲜，现场加工，超新鲜！</p></div></div>
+<div class="drow"><span class="dicon">🦞</span><div class="dtext"><h4>晚上 · 博贺港海鲜</h4><p>直接从渔船上买海鲜，现场加工，超新鲜！</p><p class="addr">地址：茂名市电白区博贺镇博贺港</p></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#023e8a,#0077b6)"><span class="badge">Day 2 · 4.30</span><span class="dtitle">茂名 · 中国第一滩 + 浪漫海岸</span></div><div class="dbody">
-<div class="drow"><span class="dicon">🏖️</span><div class="dtext"><h4>上午 · 中国第一滩</h4><p>免费超长海岸线，椰林，浅水区大，踩浪玩水</p></div></div>
-<div class="drow"><span class="dicon">🌅</span><div class="dtext"><h4>下午 · 浪漫海岸</h4><p>一线海景度假区，私人沙滩，拍照超美，看日落</p></div></div>
-<div class="drow"><span class="dicon">🔥</span><div class="dtext"><h4>晚上 · 海边烧烤</h4><p>海边烧烤 or 海鲜大排档，&#165;100/人</p></div></div>
+<div class="drow"><span class="dicon">🏖️</span><div class="dtext"><h4>上午 · 中国第一滩</h4><p>免费超长海岸线，椰林，浅水区大，踩浪玩水</p><p class="addr">地址：茂名市电白区虎头山海滨旅游区 · 免费</p></div></div>
+<div class="drow"><span class="dicon">🌅</span><div class="dtext"><h4>下午 · 浪漫海岸</h4><p>一线海景度假区，私人沙滩，拍照超美，看日落</p><p class="addr">地址：茂名市电白区浪漫海岸国际旅游度假区</p></div></div>
+<div class="drow"><span class="dicon">🔥</span><div class="dtext"><h4>晚上 · 海边烧烤</h4><p>海边烧烤 or 海鲜大排档 · ¥100/人</p></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#023e8a,#0077b6)"><span class="badge">Day 3 · 5.1</span><span class="dtitle">茂名 · 放鸡岛</span></div><div class="dbody">
-<div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#023e8a,#0077b6)"><span class="badge">Day 4 · 5.2</span><span class="dtitle">茂名 → 湛江</span></div><div class="dbody">
+<div class="drow"><span class="dicon">🚢</span><div class="dtext"><h4>全天 · 放鸡岛海洋度假区</h4>
+<ul>
+<li>坐船上岛（船票需提前订）</li>
+<li>中国生态最好的海岛之一，可浮潜/深潜/环岛徒步</li>
+<li>往返船票+门票 ¥165/人（成人票）</li>
+</ul>
+<p class="addr">地址：茂名市电白区博贺镇翠湖路放鸡岛 · 开放时间 10:00-17:00</p></div></div>
+<div class="drow"><span class="dicon">🌙</span><div class="dtext"><h4>晚上 · 返回博贺港海鲜晚餐</h4><p>又一顿海鲜！¥100/人</p></div></div>
+</div></div>
+
+<div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#023e8a,#0077b6)"><span class="badge">Day 4 · 5.2</span><span class="dtitle">茂名 → 湛江</span<div class="dbody">
 <div class="drow"><span class="dicon">🚌</span><div class="dtext"><h4>交通</h4><p>包车/自驾前往湛江（约2小时）</p></div></div>
-<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>下午 · 赤坎老街</h4><p>骑楼建筑群，拍照超出片，免费</p></div></div>
-<div class="drow"><span class="dicon">🏖️</span><div class="dtext"><h4>傍晚 · 金沙湾</h4><p>城区免费海滩，看日落</p></div></div>
-<div class="drow"><span class="dicon">🦪</span><div class="dtext"><h4>晚上 · 湛江烧蚝</h4><p>湛江烧蚝全国闻名，必吃！&#165;80/人</p></div></div>
+<div class="drow"><span class="dicon">🏛️</span><div class="dtext"><h4>下午 · 赤坎老街</h4><p>骑楼建筑群，拍照超出片，免费</p><p class="addr">地址：湛江赤坎区赤坎老街 · 免费</p></div></div>
+<div class="drow"><span class="dicon">🏖️</span><div class="dtext"><h4>傍晚 · 金沙湾</h4><p>城区免费海滩，紧靠市中心，看日落</p><p class="addr">地址：湛江赤坎区金沙湾海滨浴场 · 免费</p></div></div>
+<div class="drow"><span class="dicon">🦪</span><div class="dtext"><h4>晚上 · 湛江烧蚝</h4><p>湛江烧蚝全国闻名，必吃！</p><p class="addr">推荐：烧蚝帮(万达店) · 湛江市海滨大道北尚都汇餐饮娱乐中心首层 · ¥80/人</p></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#023e8a,#0077b6)"><span class="badge">Day 5 · 5.3</span><span class="dtitle">湛江 · 湖光岩</span></div><div class="dbody">
-<div class="drow"><span class="dicon">🌋</span><div class="dtext"><h4>上午 · 湖光岩风景区</h4><p>世界地质公园，火山口湖，负离子爆棚<br>环湖骑行/散步，免费</p></div></div>
+<div class="drow"><span class="dicon">🌋</span><div class="dtext"><h4>上午 · 湖光岩风景区</h4><p>世界地质公园，火山口湖，负离子爆棚<br>环湖骑行/散步，免费</p><p class="addr">地址：湛江市麻章区湖光岩风景区 · 开放时间 8:00-18:00 · 免费</p></div></div>
 <div class="drow"><span class="dicon">🏘️</span><div class="dtext"><h4>下午 · 霞山区老街</h4><p>老街citywalk，感受老湛江风情</p></div></div>
-<div class="drow"><span class="dicon">🦞</span><div class="dtext"><h4>晚上 · 湛江海鲜大餐</h4><p>虾粥、沙虫粥、炸麻鱼 · &#165;150/人</p></div></div>
+<div class="drow"><span class="dicon">🦞</span><div class="dtext"><h4>晚上 · 湛江海鲜大餐</h4><p>虾粥、沙虫粥、炸麻鱼 · ¥150/人</p></div></div>
 </div></div>
 
 <div class="card"><div class="dhdr" style="background:linear-gradient(135deg,#023e8a,#0077b6)"><span class="badge">Day 6 · 5.4</span><span class="dtitle">湛江 → 杭州</span></div><div class="dbody">
@@ -274,7 +298,6 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <div class="drow"><span class="dicon">🎁</span><div class="dtext"><h4>上午 · 购买手信</h4><p>湛江蚝豉、虾干、鱿鱼干</p></div></div>
 <div class="drow"><span class="dicon">✈️</span><div class="dtext"><h4>下午 · 返回杭州</h4><p>结束美好旅程 ✨</p></div></div>
 </div></div>
-
 </div>
 </section>
 
@@ -282,12 +305,12 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <h2>景点推荐</h2>
 <p>这些地方值得去</p>
 <div class="sgrid">
-<div class="scard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=70" alt="中国第一滩"><div class="sb"><div class="sn">中国第一滩</div><div class="sd">免费超长海岸线，椰林，浅水区大，适合踩浪玩水</div><span class="sc">茂名 · 免费</span></div></div>
-<div class="scard"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=70" alt="放鸡岛"><div class="sb"><div class="sn">放鸡岛</div><div class="sd">中国生态最好海岛之一，浮潜深潜胜地，需坐船上岛</div><span class="sc">茂名 · &#165;150/人</span></div></div>
-<div class="scard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=70" alt="浪漫海岸"><div class="sb"><div class="sn">浪漫海岸</div><div class="sd">一线海景度假区，私人沙滩，拍照超美，看日落绝佳</div><span class="sc">茂名 · 拍照圣地</span></div></div>
-<div class="scard"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=70" alt="金沙湾"><div class="sb"><div class="sn">金沙湾</div><div class="sd">湛江城区免费海滩，紧靠市中心，适合看日落</div><span class="sc">湛江 · 免费</span></div></div>
-<div class="scard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70" alt="赤坎老街"><div class="sb"><div class="sn">赤坎老街</div><div class="sd">骑楼建筑群，历史街区，拍照超出片</div><span class="sc">湛江 · 免费</span></div></div>
-<div class="scard"><img src="https://images.unsplash.com/photo-1504681869696-d977211a5fce?w=400&q=70" alt="湖光岩"><div class="sb"><div class="sn">湖光岩</div><div class="sd">世界地质公园，火山口湖，负离子爆棚</div><span class="sc">湛江 · 免费</span></div></div>
+<div class="scard"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=70" alt="中国第一滩"><div class="sb"><div class="sn">中国第一滩</div><div class="sd">免费超长海岸线，椰林，浅水区大，适合踩浪玩水</div><span class="sa">茂名市电白区虎头山海滨旅游区</span><span class="sc">茂名 · 免费</span></div></div>
+<div class="scard"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=70" alt="放鸡岛"><div class="sb"><div class="sn">放鸡岛</div><div class="sd">中国生态最好海岛之一，浮潜深潜胜地，需坐船上岛</div><span class="sa">茂名市电白区博贺镇翠湖路放鸡岛 · 10:00-17:00</span><span class="sc">茂名 · ¥165/人</span></div></div>
+<div class="scard"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=70" alt="浪漫海岸"><div class="sb"><div class="sn">浪漫海岸</div><div class="sd">一线海景度假区，私人沙滩，拍照超美，看日落绝佳</div><span class="sa">茂名市电白区浪漫海岸国际旅游度假区</span><span class="sc">茂名 · 拍照圣地</span></div></div>
+<div class="scard"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=70" alt="金沙湾"><div class="sb"><div class="sn">金沙湾</div><div class="sd">湛江城区免费海滩，紧靠市中心，适合看日落</div><span class="sa">湛江赤坎区金沙湾海滨浴场</span><span class="sc">湛江 · 免费</span></div></div>
+<div class="scard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70" alt="赤坎老街"><div class="sb"><div class="sn">赤坎老街</div><div class="sd">骑楼建筑群，历史街区，拍照超出片</div><span class="sa">湛江赤坎区赤坎老街</span><span class="sc">湛江 · 免费</span></div></div>
+<div class="scard"><img src="https://images.unsplash.com/photo-1504681869696-d977211a5fce?w=400&q=70" alt="湖光岩"><div class="sb"><div class="sn">湖光岩</div><div class="sd">世界地质公园，火山口湖，负离子爆棚</div><span class="sa">湛江市麻章区湖光岩风景区</span><span class="sc">湛江 · 免费</span></div></div>
 </div>
 </section>
 
@@ -295,12 +318,12 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 <h2>美食地图</h2>
 <p>湛江烧蚝、博贺港海鲜，吃到扶墙出</p>
 <div class="fgrid">
-<div class="fcard"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=70" alt="湛江烧蚝"><div class="fb"><div class="fn">湛江烧蚝</div><div class="fd">全国闻名，蒜蓉粉丝蚝，现烤上桌，一打打吃</div><span class="fc" style="color:#0077b6">湛江 · 必吃</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=400&q=70" alt="博贺港海鲜"><div class="fb"><div class="fn">博贺港海鲜</div><div class="fd">直接从渔船上买，船上加工，真正的"透鲜"</div><span class="fc" style="color:#0077b6">茂名 · 必吃</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=70" alt="海鲜大排档"><div class="fb"><div class="fn">海鲜大排档</div><div class="fd">椒盐皮皮虾、炒花蛤、蒸扇贝，新鲜便宜</div><span class="fc" style="color:#0077b6">茂名/湛江</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1476099440247-f66ca278ae42?w=400&q=70" alt="虾粥"><div class="fb"><div class="fn">湛江虾粥/沙虫粥</div><div class="fd">早餐首选，鲜到不行，配油条超搭</div><span class="fc" style="color:#0077b6">湛江 · 早餐</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1534482421-64566f976cfa?w=400&q=70" alt="炸麻鱼"><div class="fb"><div class="fn">炸麻鱼</div><div class="fd">湛江特色，外酥里嫩，配白粥一流</div><span class="fc" style="color:#0077b6">湛江 · 特色</span></div></div>
-<div class="fcard"><img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&q=70" alt="海边烧烤"><div class="fb"><div class="fn">海边烧烤</div><div class="fd">海边沙滩自助烧烤，看日落吃烧烤，超有氛围</div><span class="fc" style="color:#0077b6">茂名 · 体验</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=70" alt="湛江烧蚝"><div class="fb"><div class="fn">湛江烧蚝</div><div class="fd">全国闻名，蒜蓉粉丝蚝，现烤上桌，一打打吃</div><span class="fa">烧蚝帮(万达店) · 海滨大道北尚都汇首层</span><span class="fc" style="color:#0077b6">湛江 · 必吃</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=400&q=70" alt="博贺港海鲜"><div class="fb"><div class="fn">博贺港海鲜</div><div class="fd">直接从渔船上买，船上加工，真正的"透鲜"</div><span class="fa">茂名市电白区博贺镇博贺港</span><span class="fc" style="color:#0077b6">茂名 · 必吃</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=70" alt="海鲜大排档"><div class="fb"><div class="fn">海鲜大排档</div><div class="fd">椒盐皮皮虾、炒花蛤、蒸扇贝，新鲜便宜</div><span class="fa">茂名中国第一滩/浪漫海岸附近</span><span class="fc" style="color:#0077b6">茂名/湛江</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1476099440247-f66ca278ae42?w=400&q=70" alt="虾粥"><div class="fb"><div class="fn">湛江虾粥/沙虫粥</div><div class="fd">早餐首选，鲜到不行，配油条超搭</div><span class="fa">湛江市区各大海鲜粥店</span><span class="fc" style="color:#0077b6">湛江 · 早餐</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1534482421-64566f976cfa?w=400&q=70" alt="炸麻鱼"><div class="fb"><div class="fn">炸麻鱼</div><div class="fd">湛江特色，外酥里嫩，配白粥一流</div><span class="fa">湛江霞山区老街附近</span><span class="fc" style="color:#0077b6">湛江 · 特色</span></div></div>
+<div class="fcard"><img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&q=70" alt="海边烧烤"><div class="fb"><div class="fn">海边烧烤</div><div class="fd">海边沙滩自助烧烤，看日落吃烧烤，超有氛围</div><span class="fa">茂名浪漫海岸/中国第一滩海边</span><span class="fc" style="color:#0077b6">茂名 · 体验</span></div></div>
 </div>
 </section>
 
@@ -318,7 +341,7 @@ footer{text-align:center;padding:26px 20px;background:#2c3e50;color:rgba(255,255
 </section>
 
 <div style="text-align:center;padding:40px 20px;background:#fff;border-top:1px solid #eee">
-<p style="font-size:13px;color:#999">&#128679; 粤西海边度假 · 小七出品 · 2026.04.02</p>
+<p style="font-size:13px;color:#999">© 粤西海边度假 · 小七出品 · 2026.04.03</p>
 </div>
 </div>
 
